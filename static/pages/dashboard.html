@@ -1,0 +1,66 @@
+<div class="dashboard-layout">
+    <header class="dashboard-header">
+        <div class="title">Takedown Observer</div>
+        <div class="title-section">
+            <h2><span class="subtitle">Dataset</span></h2>
+            <div class="meta">The dataset currently collects {{totalAccounts}} withheld accounts on X/Twitter from {{totalCountries}} countries and was last updated on {{lastUpdate}}. You may filter the results by country, search for a particular account or <a href="/api/download" class="inline-link">download</a> the entire dataset for further analysis.</div>
+        </div>
+        <nav class="nav-buttons">
+            <a href="/" class="primary-btn">[ HOME ]</a>
+            <a href="/about" class="secondary-btn">[ ABOUT ]</a>
+            <a href="/related-work" class="primary-btn">[ RELATED WORK ]</a>
+            <a href="https://github.com/takedown-observer" class="secondary-btn">[ GITHUB ]</a>
+        </nav>
+    </header>
+
+    <div class="filter-section">
+        <div class="filter-row">
+            <div class="filter-group">
+                <label for="countryFilter">COUNTRY:</label>
+                <select id="countryFilter" class="filter-input">
+                    <option value="">All Countries</option>
+                    <div id="countryOptions"></div>
+                </select>
+            </div>
+            <div class="filter-group search-group">
+                <label for="searchFilter">SEARCH:</label>
+                <div class="search-container">
+                    <input type="text" id="searchFilter" class="filter-input" placeholder="Search by username...">
+                    <button id="searchButton" class="filter-button">SEARCH</button>
+                </div>
+            </div>
+            <button id="clearFilters" class="filter-button">CLEAR FILTERS</button>
+        </div>
+    </div>
+
+    <main class="data-section">
+        <div class="data-header">
+            <div class="block-header">> Country-level Account Takedowns on X</div>
+            <div class="page-info">PAGE {{currentPage}} OF {{totalPages}} | 20 ENTRIES PER PAGE</div>
+        </div>
+
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="username-col">USERNAME</th>
+                        <th class="countries-col">COUNTRIES</th>
+                        <th class="date-col">LAST REPORTED AT</th>
+                    </tr>
+                </thead>
+                <tbody id="accountsList">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <div id="paginationControls" class="pagination-controls"></div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="system-status">
+            <a href="/" class="nav-link">Takedown Observer</a>: An open dataset of social media content removals
+        </div>
+    </footer>
+</div>
