@@ -7,7 +7,7 @@ https://takedown.observer
 ## Usage
 
 ```
-# test on Go version
+# tested on Go version
 $ go version
 go version go1.23.2 darwin/arm64
 
